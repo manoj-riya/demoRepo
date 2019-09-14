@@ -1,0 +1,11 @@
+
+
+<img *ngIf="userData!" [src]="userData?.avatar_url" />
+<ul>
+  <li>login: {{userData.login}}</li>
+  <li>node_id: {{userData.node_id}}</li>
+  <li>gravatar_id:{{userData.gravatar_id}}</li>
+  <li>name: {{userData.name}}</li>
+  <li>company: {{userData.company}}</li>
+  <li>location: {{userData.location}}</li>
+</ul>
