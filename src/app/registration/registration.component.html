@@ -1,37 +1,30 @@
-<p>
-  <table style="width:100%;" >
-    <tr style="background-color:chartreuse;"><td colspan="5" align="center"><h3>Registration Form</h3></td></tr>
+<form [formGroup] ="registrationForm">
+  <table style="width:100%;">
+    <tr style="background-color:chartreuse;">
+      <td colspan="5" align="center">
+        <h3>Registration Form</h3>
+      </td>
+    </tr>
     <br>
     <tr>
-      
-
       <td style="width: 10%;"><label>user Name</label> </td>
-      <td style="width: 35%;"><input type="text" class="form-control"></td>
-      <td style="width: 5%;"></td>
-      <td style="width: 10%;"><label>Gender</label> </td>
-      <td style="width: 35%;"><input type="text" class="form-control"></td>
-    </tr><br>
+      <td style="width: 35%;"><input type="text" class="form-control" formControlName="userName" [(ngModel)]="username"></td>
+    </tr>
     <tr>
-        <td><label>Email</label> </td>
-        <td><input type="text" class="form-control" name="txt_Email" ></td>
-      <td></td>
-      
-          <td><label>Password</label> </td>
-          <td><input type="password" class="form-control" name="txtPassword"></td>
-        </tr><br>
-        <tr>
-            <td><label>State</label> </td>
-            <td><input type="option" class="form-control"></td><td></td>
-            <td><label>District</label> </td>
-            <td>
-              <option></option> 
-            
-            </td>
-          </tr><br>
-          <tr>
-            <td colspan="5" align="center"><input type="submit" value="Submit" class="button"></td>
-          </tr>
+      <td style="width: 10%;"><label>Gender</label> </td>
+      <td style="width: 35%;"><input type="text" class="form-control" formControlName="gender"></td>
+    </tr>
+    <tr>
+      <td><label>Email</label> </td>
+      <td><input type="text" class="form-control" name="txt_Email" formControlName="email"></td>
+    </tr>
+    <tr>
+      <td colspan="5" align="center">
+        <input type="submit" value="Submit" class="button" (click)="saveForm(registrationForm.value)" [disabled]="registrationForm.invalid" />
+        <input type="button" value="Cancel" class="button" (click)="cancelForm()">
+      </td>
+    </tr>
   </table>
-  
-<p>
-<p>{{name.value}}</p>
+
+  {{username}}
+</form>
